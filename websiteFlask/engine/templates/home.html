@@ -2,25 +2,82 @@
 
 {% block body %}
 
-<div class="container">
-  <img src="../static/assets/img/tudoubing.jpg"/>
-  <img src="../static/assets/img/tudoubing.jpg"/>
+
+
+<div style="margin-top:50px">
+  <div>
+  	<img style="margin-left:20%" width="400" height="400"  src="../static/assets/img/tudoubing.jpg"/>
+  </div>
   <h3 align="center">Potato  20$</h3>
-  <p align="center">土豆饼，司令的最爱，你爱买不买，买的了吃亏，买不了上当</p>
+  <p align="center">Siling's Tudoubing</p>
   <div style="margin-left:40%">
-	  	<button class="btn btn-hg btn-primary" id="plus" onclick="op('minus')" >-</button>
-		<button class="btn btn-hg btn-primary" id="value">0</button>
-		<button class="btn btn-hg btn-primary" id="plus" onclick="op('plus')">+</button>
+	  	<button class="btn btn-hg btn-primary" id="plus1" onclick="op('minus1','value1')" >-</button>
+		<button class="btn btn-hg btn-primary" id="value1">0</button>
+		<button class="btn btn-hg btn-primary" id="plus1" onclick="op('plus1','value1')">+</button>
   </div>
 </div>
 
-<div class="container">
+<div  style="margin-top:50px">
+  <div>
+  	<img style="margin-left:20%" width="400" height="400"  src="../static/assets/img/tudoubing.jpg"/>
+  </div>
+  <h3 align="center">Potato  20$</h3>
+  <p align="center">Siling's Tudoubing</p>
+  <div style="margin-left:40%">
+	  	<button class="btn btn-hg btn-primary" id="plus2" onclick="op('minus2','value2')" >-</button>
+		<button class="btn btn-hg btn-primary" id="value2">0</button>
+		<button class="btn btn-hg btn-primary" id="plus2" onclick="op('plus2','value2')">+</button>
+  </div>
+</div>
+
+<div  style="margin-top:50px">
+  <div>
+  	<img style="margin-left:20%" width="400" height="400"  src="../static/assets/img/tudoubing.jpg"/>
+  </div>
+  <h3 align="center">Potato  20$</h3>
+  <p align="center">Siling's Tudoubing</p>
+  <div style="margin-left:40%">
+	  	<button class="btn btn-hg btn-primary" id="plus3" onclick="op('minus3','value3')" >-</button>
+		<button class="btn btn-hg btn-primary" id="value3">0</button>
+		<button class="btn btn-hg btn-primary" id="plus3" onclick="op('plus3','value3')">+</button>
+  </div>
+</div>
+
+<div  style="margin-top:50px">
+  <div>
+  	<img style="margin-left:20%" width="400" height="400"  src="../static/assets/img/tudoubing.jpg"/>
+  </div>
+  <h3 align="center">Potato  20$</h3>
+  <p align="center">Siling's Tudoubing</p>
+  <div style="margin-left:40%">
+	  	<button class="btn btn-hg btn-primary" id="plus4" onclick="op('minus4','value4')" >-</button>
+		<button class="btn btn-hg btn-primary" id="value4">0</button>
+		<button class="btn btn-hg btn-primary" id="plus4" onclick="op('plus4','value4')">+</button>
+  </div>
+</div>
+
+<div  style="margin-top:50px">
+  <div>
+  	<img style="margin-left:20%" width="400" height="400"  src="../static/assets/img/tudoubing.jpg"/>
+  </div>
+  <h3 align="center">Potato  20$</h3>
+  <p align="center">Siling's Tudoubing</p>
+  <div style="margin-left:40%">
+	  	<button class="btn btn-hg btn-primary" id="plus5" onclick="op('minus5','value5')" >-</button>
+		<button class="btn btn-hg btn-primary" id="value5">0</button>
+		<button class="btn btn-hg btn-primary" id="plus5" onclick="op('plus5','value5')">+</button>
+  </div>
+</div>
+
+
+
+<div  style="margin-left:45%;margin-top:30px">
 	<button class="btn btn-hg btn-primary" id="submit" onclick="submit()">submit</button>
 </div>
 
 
 <script>
-var params = {"tudoubing":0};
+var params = {"value1":0,"value2":0,"value3":0,"value4":0,"value5":0};
 function submit() 
 {
 	var form = document.createElement("form");
@@ -40,19 +97,17 @@ function submit()
 	document.body.appendChild(form);
     form.submit();
 }
-function op(value)
+function op(oper, value)
 {
-	var ele = document.getElementById("plus");
-	var count = document.getElementById("value");
-	if (value=='plus') {
-		//alert(ele.innerHTML);
-		params["tudoubing"] += 1;
+	var count = document.getElementById(value);
+	if (oper[0]=='p') {
+		params[value] += 1;
 		count.innerHTML = parseInt(count.innerHTML)+1;
 	}
-	if (value=='minus') {
+	if (oper[0]=='m') {
 		var cur = parseInt(count.innerHTML);
 		if (cur > 0) {
-			params["tudoubing"] -= 1;
+			params[value] -= 1;
 			count.innerHTML = parseInt(count.innerHTML)-1;
 		}
 	}

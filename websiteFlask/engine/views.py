@@ -10,7 +10,7 @@ def home():
 @app.route('/submit',methods=["POST","GET"])
 def submit():
 	if request.method == "POST":
-		name = request.form["tudoubing"]
-		print name
+		for key in request.form:
+			print request.form[key]
 	return "Hello"
 
