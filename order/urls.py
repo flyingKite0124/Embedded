@@ -3,6 +3,6 @@ import views
 
 urlpatterns = [
     url(r'^$',views.index),
-    url(r'^order$',views.order),
+    url(r'^submit$',views.submit),
     url(r'^redirect$',views.redirect),
 ]

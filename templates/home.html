@@ -81,7 +81,7 @@ var params = {"value1":0,"value2":0,"value3":0,"value4":0,"value5":0};
 function submit() 
 {
 	var form = document.createElement("form");
-	form.setAttribute("method", "post");
+	form.setAttribute("method", "get");
 	form.setAttribute("action", "submit");
 	for (var key in params) {
 		if (params.hasOwnProperty(key)) {

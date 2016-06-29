@@ -14,9 +14,9 @@ def print_usb(dish_list):
     usb.text("desk_id:3\n")
     total=0
     for dish in dish_list:
-        dish_num=int(dish.num)
-        dish_price=float(dish.price)
-        usb.text("%s num:%d price:%f\n"%(dish.name,dish_num,dish_price))
+        dish_num=int(dish["num"])
+        dish_price=float(dish["price"])
+        usb.text("%s num:%d price:%f\n"%(dish["name"],dish_num,dish_price))
         total+=dish_num*dish_price
     usb.text("total:%f\n"%total)
     usb.cut()
