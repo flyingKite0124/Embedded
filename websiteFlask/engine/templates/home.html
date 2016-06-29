@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<div class="container">
+  <img src="../static/assets/img/tudoubing.jpg"/>
+  <img src="../static/assets/img/tudoubing.jpg"/>
+  <h3 align="center">Potato  20$</h3>
+  <p align="center">土豆饼，司令的最爱，你爱买不买，买的了吃亏，买不了上当</p>
+  <div style="margin-left:40%">
+	  	<button class="btn btn-hg btn-primary" id="plus" onclick="op('minus')" >-</button>
+		<button class="btn btn-hg btn-primary" id="value">0</button>
+		<button class="btn btn-hg btn-primary" id="plus" onclick="op('plus')">+</button>
+  </div>
+</div>
+
+<div class="container">
+	<button class="btn btn-hg btn-primary" id="submit" onclick="submit()">submit</button>
+</div>
+
+
+<script>
+var params = {"tudoubing":0};
+function submit() 
+{
+	var form = document.createElement("form");
+	form.setAttribute("method", "post");
+	form.setAttribute("action", "submit");
+	for (var key in params) {
+		if (params.hasOwnProperty(key)) {
+			var hiddenField = document.createElement("input");
+            hiddenField.setAttribute("type", "hidden");
+            hiddenField.setAttribute("name", key);
+            hiddenField.setAttribute("value", params[key]);
+
+            form.appendChild(hiddenField);
+		}
+	}
+
+	document.body.appendChild(form);
+    form.submit();
+}
+function op(value)
+{
+	var ele = document.getElementById("plus");
+	var count = document.getElementById("value");
+	if (value=='plus') {
+		//alert(ele.innerHTML);
+		params["tudoubing"] += 1;
+		count.innerHTML = parseInt(count.innerHTML)+1;
+	}
+	if (value=='minus') {
+		var cur = parseInt(count.innerHTML);
+		if (cur > 0) {
+			params["tudoubing"] -= 1;
+			count.innerHTML = parseInt(count.innerHTML)-1;
+		}
+	}
+
+}
+</script>
+
+{% endblock %}

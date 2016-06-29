@@ -1,0 +1,21 @@
+{% extends "layout1.html" %}
+
+{% block body %}
+<div class="container">
+  <div class="demo-headline">
+    <h1 class="demo-logo">
+      <div class="logo"></div>
+      Soogle
+    </h1>
+  </div> <!-- /demo-headline -->
+  <form method="post">
+    <div class="input-group input-group-hg input-group-rounded">
+        <span class="input-group-btn">
+          <button type="submit" class="btn"><span class="fui-search"></span></button>
+        </span>
+        <input type="text" class="form-control" placeholder="Search" id="search-query-2" name="iQuery">
+    </div>
+</form>
+</div>
+
+{% endblock %}
